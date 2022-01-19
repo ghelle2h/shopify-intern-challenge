@@ -6,7 +6,7 @@ const db = new Pool({
   user: process.env.PGUSER,
   port: process.env.PGPORT,
   host: process.env.PGHOST,
-  database: "shopify_challenge"
+  database: "shopify"
 });
 
 module.exports = db;
