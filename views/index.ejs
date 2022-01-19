@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Shopify Backend Challenge</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.fas.fa-trash{
+  color: rgb(163, 22, 22);
+}
+button {
+  background-color: white;
+  border: none;
+}
+  </style>
+  <link rel='stylesheet' type='text/css' href='index.css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Warehouse</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let item of inventory) { %>
+      <tr>
+        <td><%= item.item_name %></td>
+        <td><%= item.description %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.name %></td>
+        <td><a href="/item/<%= item._id %>/edit"><i class="far fa-edit"></i></a></td>
+        <td>
+          <form action="/item/<%= item._id%>/delete" method="POST">
+          <button><i class="fas fa-trash"></i></button> 
+          </form>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
