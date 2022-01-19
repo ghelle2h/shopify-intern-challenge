@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Shopify Backend Challenge</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <form action="/item/create" method="POST">
+    <div class="form-group">
+      <label for="item">Item name</label>
+      <input  name="item_name" type="text" class="form-control" id="item" placeholder="Enter item name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input  name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input  name="quantity" type="text" class="form-control" id="item" placeholder="Enter item name">
+    </div>
+    <select name="warehouse" class="custom-select">
+      <option>Choose warehouse</option>
+      <% for(let warehouse of warehouses) { %>
+      <option  value="<%=warehouse.id%>"><%= warehouse.name %></option>
+      <% } %>
+    </select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</body>
