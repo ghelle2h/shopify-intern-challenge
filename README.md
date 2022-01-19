@@ -17,7 +17,7 @@ Use the psql -U username, where username is your username, command to login to t
 
 Create a database with CREATE DATABASE shopify;.
 
-Create a file called .env in the root directoy.  Fill in the necessary PostgreSQL configuration. The node-postgres library uses these environment variables by default.
+Create a file called .env in the server directoy.  Fill in the necessary PostgreSQL configuration. The node-postgres library uses these environment variables by default.
 
 Below is an example of what the .env file should look like:
 
