@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Shopify Backend Challenge</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+
+<body>
+  <%- include('partials/header') %>
+  <form action="/warehouse/add_warehouse" method="POST">
+    <div class="form-group">
+      <label for="warehouse">Warehouse name</label>
+      <input  name="warehouse_name" type="text" class="form-control" id="item" placeholder="Enter warehouse name">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input  name="city" class="form-control" placeholder="Enter City" rows="3"></input>
+    </div>
+    <div class="form-group">
+      <label for="street">Street Address</label>
+      <input  name="street_address" class="form-control" placeholder="Enter street address" rows="3"></input>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</body>
